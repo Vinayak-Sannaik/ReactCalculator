@@ -1,0 +1,65 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-image: url(bcg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 7rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.calculator-grid > button{
+    cursor:pointer;
+    font-size: 2rem;
+    border: 2px solid white;
+    border-radius: 5px;
+    outline: none;
+    background-color: rgb(255, 255, 255,.8);
+}
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+    background-color: rgb(255, 255, 255, .9);
+}
+
+
+.span-two{
+    grid-column: span 2;
+}
+.output{
+    grid-column: 1/-1;
+    background-color: rgb(17, 14, 14);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 5px;
+}
+.output .previous-operand{
+    color:rgb(157, 162, 166);
+    font-size:1.5rem;
+}
+.output .current-operand{
+    color:white;
+    font-size:2.5rem;
+}
+
+/*breakpoints*/
+@media(max-width:320px){
+    .calculator-grid{
+        margin-top: 1rem;
+        grid-template-columns: repeat(4, 5rem);
+        grid-template-rows: minmax(7rem, auto) repeat(5, 4rem);
+    } 
+}
